@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Styled QR Code</title>
+</head>
+<body>
+  <div id="qrcode"></div>
+  <!-- https://qr-code-styling.com/ da stil hazırlayıp QRCodeStyling({}) içine yapıştırarak çıktı görebilirsin -->
+  <!-- QRCodeStyling Kütüphanesini Yükleyin -->
+  <script src="https://cdn.jsdelivr.net/npm/qr-code-styling@1.8.4/lib/qr-code-styling.min.js"></script>
+  
+  <script>
+    const qrCode = new QRCodeStyling({
+  "type": "canvas",
+  "shape": "square",
+  "width": 300,
+  "height": 300,
+  "data": "https://qr-code-styling.com",
+  "margin": 0,
+  "qrOptions": {
+    "typeNumber": "0",
+    "mode": "Byte",
+    "errorCorrectionLevel": "Q"
+  },
+  "imageOptions": {
+    "saveAsBlob": true,
+    "hideBackgroundDots": true,
+    "imageSize": 0.4,
+    "margin": 0
+  },
+  "dotsOptions": {
+    "type": "extra-rounded",
+    "color": "#6a1a4c",
+    "roundSize": true
+  },
+  "backgroundOptions": { "round": 0, "color": "#ffffff" },
+//   "image": "10cc19bd484118dbcd0a7886a38ceddc.png",
+  "dotsOptionsHelper": {
+    "colorType": { "single": true, "gradient": false },
+    "gradient": {
+      "linear": true,
+      "radial": false,
+      "color1": "#6a1a4c",
+      "color2": "#6a1a4c",
+      "rotation": "0"
+    }
+  },
+  "cornersSquareOptions": { "type": "extra-rounded", "color": "#000000" },
+  "cornersSquareOptionsHelper": {
+    "colorType": { "single": true, "gradient": false },
+    "gradient": {
+      "linear": true,
+      "radial": false,
+      "color1": "#000000",
+      "color2": "#000000",
+      "rotation": "0"
+    }
+  },
+  "cornersDotOptions": { "type": "", "color": "#000000" },
+  "cornersDotOptionsHelper": {
+    "colorType": { "single": true, "gradient": false },
+    "gradient": {
+      "linear": true,
+      "radial": false,
+      "color1": "#000000",
+      "color2": "#000000",
+      "rotation": "0"
+    }
+  },
+  "backgroundOptionsHelper": {
+    "colorType": { "single": true, "gradient": false },
+    "gradient": {
+      "linear": true,
+      "radial": false,
+      "color1": "#ffffff",
+      "color2": "#ffffff",
+      "rotation": "0"
+    }
+  }
+});
+
+    qrCode.append(document.getElementById("qrcode"));
+  </script>
+</body>
+</html>
